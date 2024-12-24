@@ -1,0 +1,15 @@
+﻿{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5 text-center">
+    <h1 class="mb-4">Добро пожаловать на страницу управления Генадием</h1>
+    <p class="lead mb-4">Используйте наши кнопки для работы с системой.</p>
+
+    <!-- Пример кнопок для действий -->
+    <div>
+        <a href="{{ url_for('facts') }}" class="btn btn-primary me-2">Факты</a>
+        <a href="{{ url_for('hello') }}" class="btn btn-secondary me-2">Приветствия</a>
+        <a href="{{ url_for('message_statistics') }}" class="btn btn-success">Статистика</a>
+    </div>
+</div>
+{% endblock %}

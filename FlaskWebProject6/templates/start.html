@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добро пожаловать</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container mt-5 text-center">
+        <h1 class="mb-4">Добро пожаловать на наш сайт</h1>
+        <p class="lead mb-4">Пожалуйста, выберите действие:</p>
+
+        <!-- Кнопки действий -->
+        <div>
+            <a href="{{ url_for('register') }}" class="btn btn-primary me-2">Регистрация</a>
+            <a href="{{ url_for('login') }}" class="btn btn-secondary">Вход</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

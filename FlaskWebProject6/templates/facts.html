@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">Факты</h2>
+
+    <!-- Форма добавления факта -->
+    <form method="post" class="mb-4">
+        <div class="input-group">
+            <input type="text" name="fact" class="form-control" placeholder="Добавьте новый факт">
+            <button type="submit" class="btn btn-primary">Добавить</button>
+        </div>
+    </form>
+
+    <!-- Список фактов -->
+    <ul class="list-group mb-4">
+        {% for fact in facts %}
+        <li class="list-group-item">{{ fact.strip() }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Кнопка возврата -->
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Вернуться на главную</a>
+</div>
+{% endblock %}

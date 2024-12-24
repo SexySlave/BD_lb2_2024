@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">User Details</h2>
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th scope="row">User ID</th>
+                <td>{{ user.user_id }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Имя пользователя</th>
+                <td>{{ user.username }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Последняя активность</th>
+                <td>{{ user.last_active }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="{{ url_for('all_users') }}" class="btn btn-primary">Вернуться к пользователям</a>
+</div>
+{% endblock %}

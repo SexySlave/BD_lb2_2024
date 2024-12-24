@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">All Users</h2>
+    <table class="table table-bordered table-striped">
+        <thead class="thead-light">
+            <tr>
+                <th>User ID</th>
+                <th>Имя пользователя</th>
+                <th>Последняя активность</th>
+                <th>Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user['user_id'] }}</td>
+                <td>{{ user['username'] }}</td>
+                <td>{{ user['last_active'] }}</td>
+                <td>
+                    <form action="{{ url_for('delete_user', user_id=user['user_id']) }}" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="4">
+                    <strong>Сообщения:</strong>
+                    <ul>
+                        {% for message in user['messages'] %}
+                        <li>{{ message['timestamp'] }} - {{ message['message_text'] }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="4">
+                    <strong>Игры:</strong>
+                    <ul>
+                        {% for game in user['games'] %}
+                        <li>Game from {{ game['start_time'] }} to {{ game['end_time'] }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('index') }}" class="btn btn-info">Вернуться на главную</a>
+</div>
+{% endblock %}
+

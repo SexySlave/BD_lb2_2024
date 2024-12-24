@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">Приветствие</h2>
+
+    <!-- Форма добавления приветствия -->
+    <form method="post" class="mb-4">
+        <div class="input-group">
+            <input type="text" name="greeting" class="form-control" placeholder="Добавить новое приветствие">
+            <button type="submit" class="btn btn-primary">Добавить</button>
+        </div>
+    </form>
+
+    <!-- Список приветствий -->
+    <ul class="list-group mb-4">
+        {% for greeting in greetings %}
+        <li class="list-group-item">{{ greeting.strip() }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Кнопка возврата -->
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Вернуться на главную</a>
+</div>
+{% endblock %}
