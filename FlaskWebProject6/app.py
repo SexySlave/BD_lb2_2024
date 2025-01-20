@@ -263,4 +263,4 @@ def run_bot():
 if __name__ == '__main__':
     bot_thread = threading.Thread(target=run_bot)
     bot_thread.start()
-    app.run(debug=True, use_reloader=False)
+    app.run(debug=True, use_reloader=False, host='192.168.0.112', port=3000)
