@@ -19,10 +19,11 @@ os.makedirs(LOG_DIR, exist_ok=True)
 
 # Database Configuration
 DB_CONFIG = {
-    'user': 'j1007852',
-    'password': 'el|N#2}-F8',
-    'host': 'mysql.j1007852.myjino.ru',
-    'database': 'j1007852'
+    'user': 'j42827334',
+    'password': 'AjU7Uyd6c',
+    'host': 'mysql.52fc022b1876.hosting.myjino.ru',
+    'database': 'j42827334',
+    'charset': 'utf8mb4'
 }
 
 # Tables
